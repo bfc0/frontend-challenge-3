@@ -1,0 +1,264 @@
+*,
+html,
+body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+
+body {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 16px;
+    background-color: var(--col2);
+}
+
+main {
+    margin: auto;
+    height: 100%;
+    width: clamp(350px, 100%, 1440px);
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+picture {
+    width: 100%;
+    object-fit: cover;
+    display: flex;
+    flex-direction: column;
+}
+
+img {
+    object-fit: cover;
+}
+
+.logo_img {
+    width: min(50%, 100px);
+    align-self: flex-start;
+    margin: 2em;
+}
+
+.left {
+    padding: 2em;
+    align-items: center;
+}
+
+
+h2 {
+    color: var(--clr-desaturated-red);
+    font-weight: 300;
+    font-size: 2.5em;
+    text-transform: uppercase;
+    margin-top: 0.7em;
+    letter-spacing: 8px;
+}
+
+h1 {
+    font-size: 2.5em;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 600;
+    margin-top: 0.5rem;
+    /* line-height: 1.2; */
+    letter-spacing: 8px;
+}
+
+p {
+    margin-top: 1em;
+    color: var(--clr-desaturated-red);
+    font-size: 0.9em;
+    line-height: 1.5;
+    text-align: center;
+    font-weight: 400;
+}
+
+.input_container {
+    padding-block: 1em;
+    width: 100%;
+}
+
+input[type=text] {
+    padding: 1em;
+    border: none;
+    outline: none;
+    background: transparent;
+}
+
+
+input::placeholder {
+    color: var(--clr-desaturated-red);
+    font-family: 'Josefin Sans', sans-serif;
+    letter-spacing: 0.5px;
+}
+
+.email_input {
+    border-radius: 2em;
+    border: 1px solid var(--clr-desaturated-red);
+    display: flex;
+    border-right: transparent;
+    z-index: 3;
+}
+
+.invalid {
+    border: 1px solid red !important;
+    position: relative;
+}
+
+.invalid::before {
+    content: "Please provide a valid email";
+    position: absolute;
+    top: 4em;
+    left: 3em;
+    color: red;
+}
+
+.invalid::after {
+    content: url("./images/icon-error.svg");
+    position: absolute;
+    top: 25%;
+    right: 30%;
+}
+
+.valid {
+    position: absolute;
+}
+
+.valid::before {
+    content: "Email is valid";
+    position: absolute;
+    top: 4em;
+    left: 3em;
+    color: green;
+}
+
+
+
+button {
+    margin-left: auto;
+    border-radius: 2em;
+    background-image: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+    border: none;
+    border-radius: 2em;
+    width: 4em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-inline: 2.5em;
+    box-shadow: 0px 0px 12px 1px pink;
+}
+
+button:hover {
+    background-image: linear-gradient(135deg, hsl(0, 80%, 86%), hsla(0, 52%, 80%, 0.781));
+    box-shadow: 0px 0px 13px 2px var(--col4);
+}
+
+.logo_left {
+    display: none;
+}
+
+
+@media(min-width:1000px) {
+    body {
+        background-color: transparent;
+        background-image: url("./images/bg-pattern-desktop.svg");
+        background-position: center;
+        background-size: 100%;
+        background-repeat: no-repeat;
+    }
+
+    main {
+        display: flex;
+        flex-direction: row-reverse;
+    }
+
+    .logo_left {
+        display: block;
+        margin: 0;
+        width: clamp(5em, 50%, 10em);
+    }
+
+    .logo_right {
+        display: none;
+    }
+
+    .left {
+        padding-inline: 10em;
+        padding-block: 4em;
+        align-items: flex-start;
+        flex-basis: 50%;
+        padding-right: clamp(1em, 15%, 20em);
+    }
+
+    .right {
+        flex-basis: 50%;
+        width: clamp(200px, 50%, 800px)
+    }
+
+
+    h2 {
+        font-size: 3.5em;
+        letter-spacing: 0.4em;
+        text-align: left;
+        margin-top: 8rem;
+    }
+
+    h1 {
+        font-size: 3.7em;
+        line-height: 1.2;
+        letter-spacing: 0.3em;
+        text-align: left;
+        margin-bottom: 1rem;
+    }
+
+    p {
+        font-size: 1em;
+        text-align: left;
+        margin-bottom: 1rem;
+    }
+
+    .input_container {
+        padding-block: 2em;
+    }
+
+
+    input[type=email] {
+        font-size: 0.9em;
+    }
+
+    button {
+        padding-inline: 4em;
+        padding-block: 1.2em;
+    }
+
+    picture {
+        width: clamp(500px, 100%, 1000px);
+        size: contain;
+    }
+
+
+
+
+}
+
+:root {
+    --clr-desaturated-red: hsl(0, 36%, 70%);
+    --clr-soft-red: hsl(0, 93%, 68%);
+    --clr-dark-grayish-red: hsl(0, 6%, 24%);
+    --clr-btn: rgb(239, 159, 158);
+
+
+    --col1: hsl(0, 0%, 100%);
+    --col2: hsl(0, 100%, 98%);
+    --col3: hsl(0, 80%, 86%);
+    --col4: hsl(0, 74%, 74%);
+}
