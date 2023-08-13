@@ -80,6 +80,7 @@ p {
     line-height: 1.5;
     text-align: center;
     font-weight: 400;
+    margin-bottom: 2em;
 }
 
 .input_container {
@@ -88,7 +89,7 @@ p {
 }
 
 input[type=text] {
-    padding: 1em;
+    padding: 1.2em;
     border: none;
     outline: none;
     background: transparent;
